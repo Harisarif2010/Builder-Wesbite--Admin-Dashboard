@@ -328,3 +328,42 @@ export const inquiryRequests = [
     status: "Send",
   },
 ];
+
+export const sections = [
+  {
+    sectionName: "Hero Section",
+    editableFields: ["Title", "Subtitle", "Background image"],
+  },
+  {
+    sectionName: "Search Bar",
+    editableFields: ["Placeholder text"],
+  },
+  {
+    sectionName: "Attach RFQ Button",
+    editableFields: ["Button label", "Link to RFQ"],
+  },
+  {
+    sectionName: "Top Category",
+    editableFields: ["Category names", "Icons"],
+  },
+  {
+    sectionName: "Top Products",
+    editableFields: ["Product name", "Image", "Description"],
+  },
+  {
+    sectionName: "Top Brands",
+    editableFields: ["Brand logos"],
+  },
+  {
+    sectionName: "How it works",
+    editableFields: ["Icons", "Step title", "Description"],
+  },
+  {
+    sectionName: "Grow your Business",
+    editableFields: ["Title", "Description", "Button label", "Image"],
+  },
+  {
+    sectionName: "Clients Reviews",
+    editableFields: ["Testimonial text", "Name", "Image"],
+  },
+];

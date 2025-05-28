@@ -63,7 +63,7 @@ const AssignOrder = () => {
                       <div
                         key={option}
                         onClick={() => handleSelect(option)}
-                        className="px-4 py-2  text-sm text-[#676767] hover:bg-gray-100 cursor-pointer border-b border-[#EAEAEA] last:border-0"
+                        className="px-8 mx-9 py-2  text-sm text-[#676767] hover:bg-gray-100 cursor-pointer border-b border-[#EAEAEA] last:border-0"
                       >
                         {option}
                       </div>
