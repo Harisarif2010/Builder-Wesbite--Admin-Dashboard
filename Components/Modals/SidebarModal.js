@@ -6,7 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { X, Menu } from "lucide-react";
 
-const MobileSidebarModal = () => {
+const AdminMobileSidebarModal = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
@@ -14,58 +14,90 @@ const MobileSidebarModal = () => {
 
   const menuItems = [
     {
-      name: "Dashboard",
-      path: "/UserDashboard",
+      name: "Overview",
+      path: "/AdminDashboard",
       icon: "dashboard.png",
       activeIcon: "dashboardblue.svg",
     },
     {
-      name: "Profile",
-      path: "/UserDashboard/Profile",
-      icon: "profile.svg",
+      name: "User & Supplier Management",
+      path: "/AdminDashboard/Profile",
+      icon: "managment.png",
       activeIcon: "profileblue.svg",
     },
     {
-      name: "Quotation Request",
-      path: "/UserDashboard/Quotation",
-      icon: "quotation.svg",
-      activeIcon: "quotation.svg",
-    },
-    {
-      name: "Orders",
-      path: "/UserDashboard/Orders",
+      name: "Report & Analytics",
+      path: "/AdminDashboard/Orders",
       icon: "orders.svg",
       activeIcon: "orderblue.svg",
     },
     {
-      name: "Payment & Billing",
-      path: "/UserDashboard/Payment",
+      name: "Orders",
+      path: "/AdminDashboard/Orders",
+      icon: "quotation.svg",
+      activeIcon: "orderblue.svg",
+    },
+    {
+      name: "Products Management",
+      path: "/AdminDashboard/ProductManagment",
+      icon: "managment.png",
+      activeIcon: "productwhite.png",
+    },
+    {
+      name: "Earning & Financial",
+      path: "/AdminDashboard/Payment",
       icon: "payment.svg",
       activeIcon: "paymentblue.svg",
     },
     {
-      name: "Help & Support",
-      path: "/UserDashboard/Help",
-      icon: "help.svg",
-      activeIcon: "helpblue.svg",
+      name: "Quotation",
+      path: "/AdminDashboard/Quotation",
+      icon: "inquiry.png",
+      activeIcon: "inquiryblue.png",
     },
     {
-      name: "Chat",
-      path: "/UserDashboard/Chat",
-      icon: "chat.svg",
-      activeIcon: "chatblue.svg",
+      name: "Ad Management",
+      path: "/AdminDashboard/AdManagment",
+      icon: "Ad.png",
+      activeIcon: "adblue.png",
+    },
+    {
+      name: "Offers Management",
+      path: "/AdminDashboard/DiscountCode",
+      icon: "offer.png",
+      activeIcon: "offerwhite.png",
+    },
+    {
+      name: "Brand Management",
+      path: "/AdminDashboard/Brands",
+      icon: "brand.png",
+      activeIcon: "brandblue.png",
+    },
+    {
+      name: "Permission Management",
+      path: "/AdminDashboard/Adminstartors",
+      icon: "permission.png",
+      activeIcon: "permissionblue.png",
+    },
+    {
+      name: "Performance Monitoring",
+      path: "/AdminDashboard/Performance",
+      icon: "performance.png",
+      activeIcon: "performanceblue.png",
     },
   ];
 
   return (
     <>
-      {/* Mobile menu toggle button */}
-      <button onClick={() => setIsOpen(true)} className="text-white p-2">
+      <button
+        onClick={() => setIsOpen(true)}
+        className="text-white p-2 md:hidden"
+      >
         <Menu className="w-6 h-6" color="black" />
       </button>
 
       {isOpen && (
-        <div className="fixed  z-50 inset-0 bg-black/50  bg-opacity-60 flex">
+        <div className="fixed z-50 inset-0 bg-black/50 flex">
           <div className="w-2/3 h-full bg-[var(--secondary-blue)] p-4 rounded-r-xl overflow-y-auto">
             <div className="flex justify-between items-center mb-6">
               <Image src="/images/logo.svg" alt="Logo" width={80} height={60} />
@@ -87,25 +119,22 @@ const MobileSidebarModal = () => {
                     >
                       <div className="mr-3 w-5 h-5 relative">
                         <Image
-                          src={
-                            isActive(item.path)
-                              ? `/icons/${item.activeIcon}`
-                              : `/icons/${item.icon}`
-                          }
+                          src={`/icons/${
+                            isActive(item.path) ? item.activeIcon : item.icon
+                          }`}
                           alt={`${item.name} icon`}
                           width={20}
                           height={20}
                           className="object-contain"
                         />
                       </div>
-                      <span>{item.name}</span>
+                      <span className="text-sm">{item.name}</span>
                     </div>
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
-          {/* Click outside to close */}
           <div className="flex-1" onClick={() => setIsOpen(false)} />
         </div>
       )}
@@ -113,4 +142,4 @@ const MobileSidebarModal = () => {
   );
 };
 
-export default MobileSidebarModal;
+export default AdminMobileSidebarModal;

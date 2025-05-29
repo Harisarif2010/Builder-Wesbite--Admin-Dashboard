@@ -1,14 +1,15 @@
-import { Bell, Settings, Search } from "lucide-react";
+import { Bell, Settings, Search, Menu } from "lucide-react";
 import { poppins, roboto, inter } from "../fonts";
 import ThemeToggle from "../theme/Themetoggle";
-import MobileSidebarModal from "../../../Components/Modals/SupplierModal";
+
 import AdminSidebar from "../../../Components/Layout/AdminSIdebar";
+import AdminMobileSidebarModal from "../../../Components/Modals/SidebarModal";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <div className="flex  bg-[#EEF0F4] dark:bg-black  border-r rounded-3xl border-transparent">
+        <div className="flex  bg-[#EEF0F4] dark:bg-black  t">
           {/* Sidebar */}
           <AdminSidebar />
 
@@ -16,22 +17,29 @@ export default function RootLayout({ children }) {
           <div className="flex-1 flex flex-col min-h-screen ">
             {/* Topbar */}
             <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-3 p-3 mt-2 mx-3 bg-white rounded-[13px] h-auto">
-              {/* Search input */}
-              <div className="relative w-full md:w-1/4">
-                <input
-                  type="text"
-                  placeholder="Search here..."
-                  className="w-full pl-10 pr-4 py-2 bg-[#F2F6FA] rounded-xs text-sm placeholder:text-[#586A84] placeholder:text-[14px]"
+              <div className="relative w-full md:w-1/4 flex items-center gap-4">
+                {/* Menu icon */}
+                <Menu
+                  size={40}
+                  className="text-[#586A84] hidden md:block px-2"
                 />
-                <div className="absolute left-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
-                  <Search size={16} color="#586A84" />
+
+                <div className="relative w-full">
+                  <input
+                    type="text"
+                    placeholder="Search here..."
+                    className="w-full pl-10 pr-4 py-2 bg-[#F2F6FA] rounded-xs text-sm placeholder:text-[#586A84] placeholder:text-[14px]"
+                  />
+                  <div className="absolute left-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                    <Search size={16} color="#586A84" />
+                  </div>
                 </div>
               </div>
 
               {/* icons */}
               <div className="flex justify-end gap-x-4 md:gap-x-6">
                 <div className="md:hidden absolute top-14 left-4 z-50">
-                  <MobileSidebarModal />
+                  <AdminMobileSidebarModal />
                 </div>
                 <ThemeToggle />
                 <Bell color="#586A84" height={20} width={20} />
