@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { roboto } from "@/app/fonts";
 import { ChevronDown } from "lucide-react";
-import Image from "next/image";
 
 const AddDiscount = () => {
   const [isOpen, setIsOpen] = useState(false);

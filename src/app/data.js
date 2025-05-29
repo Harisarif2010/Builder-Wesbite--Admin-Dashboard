@@ -367,3 +367,44 @@ export const sections = [
     editableFields: ["Testimonial text", "Name", "Image"],
   },
 ];
+export const adsData = [
+  {
+    adUnitName: "Homepage Ad",
+    displayLocation: "Homepage Ad",
+    startDate: "01 Mar 2025",
+    endDate: "04 Mar 2025",
+    clicks: 1200,
+    status: "Active",
+  },
+  {
+    adUnitName: "Sidebar Sale",
+    displayLocation: "Sidebar Sale",
+    startDate: "02 Mar 2025",
+    endDate: "05 Mar 2025",
+    clicks: 800,
+    status: "Active",
+  },
+  {
+    adUnitName: "Flash Deal",
+    displayLocation: "Flash Deal",
+    startDate: "03 Mar 2025",
+    endDate: "06 Mar 2025",
+    clicks: 500,
+    status: "Sch",
+  },
+];
+
+export const contentData = [
+  {
+    articleTitle: "How to Use the Platform",
+    authorName: "Admin",
+    statusDate: "01 Mar 2025",
+    publishStatus: "Published",
+  },
+  {
+    articleTitle: "Supplier Registration Guide",
+    authorName: "Mark Smith",
+    statusDate: "03 Mar 2025",
+    publishStatus: "Draft",
+  },
+];

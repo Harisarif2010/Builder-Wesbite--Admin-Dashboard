@@ -8,7 +8,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <div className="flex  bg-[#EEF0F4] dark:bg-black">
+        <div className="flex  bg-[#EEF0F4] dark:bg-black  border-r rounded-3xl border-transparent">
           {/* Sidebar */}
           <AdminSidebar />
 
@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
 
               {/* icons */}
               <div className="flex justify-end gap-x-4 md:gap-x-6">
-                <div className="md:hidden fixed top-14 left-4 z-50">
+                <div className="md:hidden absolute top-14 left-4 z-50">
                   <MobileSidebarModal />
                 </div>
                 <ThemeToggle />

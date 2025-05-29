@@ -1,7 +1,6 @@
 import React from "react";
 import { roboto } from "@/app/fonts";
 import Image from "next/image";
-import { Pen } from "lucide-react";
 
 const TopBrands = () => {
   return (

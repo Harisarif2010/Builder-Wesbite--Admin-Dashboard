@@ -14,20 +14,18 @@ const Orders = () => {
         </h3>
         <div className="bg-white p-6 rounded-[22px] shadow-lg my-3">
           <h2 className="text-[17px] font-bold mb-4">Orders List</h2>
-
-          <div className="overflow-x-auto">
+          <div className="w-full overflow-x-auto">
             <table className="min-w-[700px] w-full text-left text-sm text-[#000000]">
               <thead className="border-b border-[#D2D2D2] text-[#8C8C8C] text-sm md:text-lg font-medium">
                 <tr>
                   <th className="py-2 px-4 whitespace-nowrap">Order ID</th>
-                  <th className="py-2 px-4 whitespace-nowrap"> Product</th>
+                  <th className="py-2 px-4 whitespace-nowrap">Product</th>
                   <th className="py-2 px-4 whitespace-nowrap">Quantity</th>
                   <th className="py-2 px-4 whitespace-nowrap">Customer</th>
                   <th className="py-2 px-4 whitespace-nowrap">Status</th>
                   <th className="py-2 px-4 whitespace-nowrap">Actions</th>
                 </tr>
               </thead>
-
               <tbody className="text-sm md:text-lg text-black font-medium">
                 {orders.map((order, idx) => (
                   <tr key={idx} className="hover:bg-gray-50">
@@ -42,11 +40,10 @@ const Orders = () => {
                     <td className="py-4 px-4 whitespace-nowrap">
                       {order.status}
                     </td>
-
                     <td className="py-3 px-4">
                       <div className="flex items-center gap-3">
                         <Pencil
-                          className=" text-[var(--primary-blue)] "
+                          className="text-[var(--primary-blue)]"
                           size={18}
                         />
                         <Image

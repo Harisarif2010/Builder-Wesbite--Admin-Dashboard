@@ -8,7 +8,7 @@ const SupplierApproval = () => {
   return (
     <div className={roboto.className}>
       <h3 className="text-[#3B4758] text-2xl font-bold px-3 py-1">
-        Order Detials
+        Supplier Approvals
       </h3>
       <div className="bg-white rounded-[22px] p-3">
         <div
