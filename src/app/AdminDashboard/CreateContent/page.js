@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
-
-const ContentManagment = () => {
+import { poppins } from "@/app/fonts";
+const CreateContent = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState("Marked");
   const options = ["Shipped", "Delivered", "Cancel"];
@@ -93,7 +93,7 @@ const ContentManagment = () => {
           <div className=" w-full flex justify-center my-3 md:justify-end md:items-end md:mt-8">
             <div className=" w-full flex justify-center md:justify-end my-3 ">
               <button
-                className={` bg-[var(--primary-blue)] text-white text-lg md:text-2xl font-medium px-8 py-3 rounded-[26px] h-14 ${poppins.variable}`}
+                className={` bg-[var(--primary-blue)] text-white text-lg md:text-2xl font-medium px-5 py-3 rounded-[26px] h-14 ${poppins.variable}`}
               >
                 Publish
               </button>
@@ -105,4 +105,4 @@ const ContentManagment = () => {
   );
 };
 
-export default ContentManagment;
+export default CreateContent;

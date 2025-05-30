@@ -55,7 +55,7 @@ const Codes = () => {
       <div className="w-full flex justify-end">
         <button
           onClick={() => router.push("/AdminDashboard/AddDiscount")}
-          className="bg-[var(--primary-blue)] text-white text-lg  md:text-2xl font-medium  px-6 md:px-8  py-3 rounded-[22px] h-17"
+          className={`bg-[var(--primary-blue)] text-white text-lg  md:text-2xl font-medium  px-6 md:px-8  py-3 rounded-[22px] h-17 ${poppins.variable}`}
         >
           Create Discount Code
         </button>

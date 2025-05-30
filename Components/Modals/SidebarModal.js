@@ -10,124 +10,145 @@ const AdminMobileSidebarModal = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
-  const isActive = (path) => pathname === path;
+  const isActive = (paths) =>
+    Array.isArray(paths) ? paths.includes(pathname) : pathname === paths;
 
   const menuItems = [
     {
       name: "Overview",
-      path: "/AdminDashboard",
-      icon: "dashboard.png",
-      activeIcon: "dashboardblue.svg",
+      paths: [
+        "/AdminDashboard/",
+        "/AdminDashboard/HomePageManagement",
+        "/AdminDashboard/HomePageStatistics",
+        "/AdminDashboard/HeroSection",
+        "/AdminDashboard/SearchBar",
+        "/AdminDashboard/RFQ",
+        "/AdminDashboard/TopCategory",
+        "/AdminDashboard/TopProducts",
+        "/AdminDashboard/TopBrands",
+        "/AdminDashboard/Works",
+        "/AdminDashboard/Buisness",
+        "/AdminDashboard/Reviews",
+      ],
+      icon: "/icons/dashboard.png",
+      activeIcon: "/icons/dashboardblue.svg",
     },
     {
-      name: "User & Supplier Management",
-      path: "/AdminDashboard/Profile",
-      icon: "managment.png",
-      activeIcon: "profileblue.svg",
+      name: "Suppliers Management",
+      paths: "/AdminDashboard/Suppliers",
+      icon: "/icons/managment.png",
+      activeIcon: "/icons/profileblue.svg",
+    },
+    {
+      name: "User Management",
+      paths: "/AdminDashboard/Users",
+      icon: "/icons/managment.png",
+      activeIcon: "/icons/profileblue.svg",
     },
     {
       name: "Report & Analytics",
-      path: "/AdminDashboard/Orders",
-      icon: "orders.svg",
-      activeIcon: "orderblue.svg",
+      paths: "/AdminDashboard/Report",
+      icon: "/icons/orders.svg",
+      activeIcon: "/icons/orderblue.svg",
     },
     {
       name: "Orders",
-      path: "/AdminDashboard/Orders",
-      icon: "quotation.svg",
-      activeIcon: "orderblue.svg",
+      paths: "/AdminDashboard/Orders",
+      icon: "/icons/quotation.svg",
+      activeIcon: "/icons/orderblue.svg",
     },
     {
       name: "Products Management",
-      path: "/AdminDashboard/ProductManagment",
-      icon: "managment.png",
-      activeIcon: "productwhite.png",
+      paths: "/AdminDashboard/ProductManagment",
+      icon: "/icons/managment.png",
+      activeIcon: "/icons/productwhite.png",
     },
     {
       name: "Earning & Financial",
-      path: "/AdminDashboard/Payment",
-      icon: "payment.svg",
-      activeIcon: "paymentblue.svg",
+      paths: ["/AdminDashboard/Payments", "/AdminDashboard/Financials"],
+      icon: "/icons/payment.svg",
+      activeIcon: "/icons/paymentblue.svg",
     },
     {
       name: "Quotation",
-      path: "/AdminDashboard/Quotation",
-      icon: "inquiry.png",
-      activeIcon: "inquiryblue.png",
+      paths: "/AdminDashboard/Quotation",
+      icon: "/icons/inquiry.png",
+      activeIcon: "/icons/inquiryblue.png",
     },
     {
       name: "Ad Management",
-      path: "/AdminDashboard/AdManagment",
-      icon: "Ad.png",
-      activeIcon: "adblue.png",
+      paths: ["/AdminDashboard/AdManagment", "/AdminDashboard/CreateAd"],
+      icon: "/icons/Ad.png",
+      activeIcon: "/icons/adblue.png",
     },
     {
       name: "Offers Management",
-      path: "/AdminDashboard/DiscountCode",
-      icon: "offer.png",
-      activeIcon: "offerwhite.png",
+      paths: ["/AdminDashboard/DiscountCode", "/AdminDashboard/AddDiscount"],
+      icon: "/icons/offer.png",
+      activeIcon: "/icons/offerwhite.png",
     },
     {
       name: "Brand Management",
-      path: "/AdminDashboard/Brands",
-      icon: "brand.png",
-      activeIcon: "brandblue.png",
+      paths: ["/AdminDashboard/Brands", "/AdminDashboard/AddBrand"],
+      icon: "/icons/brand.png",
+      activeIcon: "/icons/brandblue.png",
     },
     {
       name: "Permission Management",
-      path: "/AdminDashboard/Adminstartors",
-      icon: "permission.png",
-      activeIcon: "permissionblue.png",
+      paths: [
+        "/AdminDashboard/Adminstartors",
+        "/AdminDashboard/AddAdminstartor",
+      ],
+      icon: "/icons/permission.png",
+      activeIcon: "/icons/permissionblue.png",
     },
     {
       name: "Performance Monitoring",
-      path: "/AdminDashboard/Performance",
-      icon: "performance.png",
-      activeIcon: "performanceblue.png",
+      paths: "/AdminDashboard/Performance",
+      icon: "/icons/performance.png",
+      activeIcon: "/icons/performanceblue.png",
     },
   ];
 
   return (
-    <>
-      <button
-        onClick={() => setIsOpen(true)}
-        className="text-white p-2 md:hidden"
-      >
-        <Menu className="w-6 h-6" color="black" />
+    <div className="md:hidden">
+      <button onClick={() => setIsOpen(true)} className="p-2">
+        <Menu size={24} />
       </button>
 
       {isOpen && (
-        <div className="fixed z-50 inset-0 bg-black/50 flex">
-          <div className="w-2/3 h-full bg-[var(--secondary-blue)] p-4 rounded-r-xl overflow-y-auto">
-            <div className="flex justify-between items-center mb-6">
+        <div className="fixed inset-0 bg-black/50  bg-opacity-50 z-50 flex">
+          <div className="w-3/4 bg-[var(--secondary-blue)] p-4 overflow-y-auto">
+            <div className="flex justify-between items-center mb-4">
               <Image src="/images/logo.svg" alt="Logo" width={80} height={60} />
               <button onClick={() => setIsOpen(false)}>
-                <X className="text-white w-6 h-6" />
+                <X size={24} className="text-white" />
               </button>
             </div>
 
             <ul>
               {menuItems.map((item, index) => (
                 <li key={index} className="mb-4">
-                  <Link href={item.path} onClick={() => setIsOpen(false)}>
+                  <Link
+                    href={
+                      Array.isArray(item.paths) ? item.paths[0] : item.paths
+                    }
+                  >
                     <div
-                      className={`flex items-center px-4 py-2 rounded-lg transition-colors font-medium ${
-                        isActive(item.path)
+                      className={`flex items-center gap-3 px-4 py-2 rounded-lg font-semibold ${
+                        isActive(item.paths)
                           ? "bg-white text-[var(--secondary-blue)]"
                           : "text-white"
                       }`}
+                      onClick={() => setIsOpen(false)}
                     >
-                      <div className="mr-3 w-5 h-5 relative">
-                        <Image
-                          src={`/icons/${
-                            isActive(item.path) ? item.activeIcon : item.icon
-                          }`}
-                          alt={`${item.name} icon`}
-                          width={20}
-                          height={20}
-                          className="object-contain"
-                        />
-                      </div>
+                      <Image
+                        src={isActive(item.paths) ? item.activeIcon : item.icon}
+                        alt={item.name}
+                        width={20}
+                        height={20}
+                        className="object-contain"
+                      />
                       <span className="text-sm">{item.name}</span>
                     </div>
                   </Link>
@@ -135,10 +156,11 @@ const AdminMobileSidebarModal = () => {
               ))}
             </ul>
           </div>
-          <div className="flex-1" onClick={() => setIsOpen(false)} />
+
+          <div className="flex-1" onClick={() => setIsOpen(false)}></div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

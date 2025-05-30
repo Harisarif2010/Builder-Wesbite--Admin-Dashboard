@@ -5,18 +5,18 @@ import { Pencil, Trash2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React from "react";
 
-const Codes = () => {
+const ContentManagement = () => {
   const router = useRouter();
   return (
     <div className={`${roboto.variable}`}>
       <h3 className="text-[#3B4758] text-2xl font-bold px-3 py-1">
-        Ad Managment
+        Content Managment
       </h3>
       <div className="px-3">
         {" "}
         <div className="bg-white p-4 rounded-[22px] shadow-lg my-3">
           <h2 className="text-[17px] font-bold mb-4 px-3">
-            Ad Management Table
+            Content Management Table
           </h2>
 
           <div className="overflow-x-auto">
@@ -67,16 +67,25 @@ const Codes = () => {
         </div>
       </div>
 
-      <div className="w-full flex justify-end">
-        <button
-          onClick={() => router.push("/AdminDashboard/AddDiscount")}
-          className="bg-[var(--primary-blue)] text-white text-lg  md:text-2xl font-medium  px-6 md:px-8  py-3 rounded-[22px] h-17"
-        >
-          Create Discount Code
-        </button>
+      <div className=" w-full flex justify-center md:justify-end ">
+        {" "}
+        <div className={`flex mt-10 gap-x-3 ${poppins.variable}`}>
+          {/* Back Button */}
+          <button
+            onClick={router.push("/AdminDashboard/CreateContent")}
+            className=" text-[var(--primary-blue)] text-lg font-medium px-5 py-3 border border-[var(--primary-blue)] rounded-[26px] h-14 cursor-pointer"
+          >
+            Add Article
+          </button>
+          <button className=" bg-[var(--primary-blue)] text-white text-lg font-medium px-7 py-3 rounded-[26px] h-14">
+            Save
+          </button>
+
+          {/* Submit Button */}
+        </div>
       </div>
     </div>
   );
 };
 
-export default Codes;
+export default ContentManagement;

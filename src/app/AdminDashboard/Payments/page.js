@@ -1,4 +1,5 @@
 import { employeePermissions } from "@/app/data";
+import { poppins } from "@/app/fonts";
 import Image from "next/image";
 import React from "react";
 

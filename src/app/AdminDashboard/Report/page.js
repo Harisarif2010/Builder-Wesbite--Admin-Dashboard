@@ -3,6 +3,7 @@ import { contentData } from "@/app/data";
 import Image from "next/image";
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { poppins } from "@/app/fonts";
 
 const Report = () => {
   const [isOpen, setIsOpen] = useState(false);

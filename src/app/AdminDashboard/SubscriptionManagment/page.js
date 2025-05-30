@@ -1,5 +1,6 @@
 "use client";
 import { orders } from "@/app/data";
+import { poppins } from "@/app/fonts";
 import { Trash2 } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -112,7 +113,7 @@ const SubscriptionManagment = () => {
       </div>
       <div className=" w-full flex justify-center md:justify-end my-3  ">
         <button
-          className=" bg-[var(--primary-blue)] text-white text-xs md:text-lg font-medium px-5 py-3 rounded-[26px] h-16"
+          className={`bg-[var(--primary-blue)] text-white text-xs md:text-base font-medium px-4 py-3 rounded-[26px] h-16 ${poppins.variable}`}
           onClick={() => {
             router.push("/AdminDashboard/AddSubscription");
           }}

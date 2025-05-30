@@ -53,10 +53,10 @@ const Permissions = () => {
         </div>
       </div>
 
-      <div className="w-full flex justify-end">
+      <div className="w-full flex justify-end ">
         <button
           onClick={() => router.push("/AdminDashboard/AddBrand")}
-          className="bg-[var(--primary-blue)] text-white text-lg  md:text-2xl font-medium  px-6 md:px-8  py-3 rounded-[22px] h-17"
+          className={`bg-[var(--primary-blue)] text-white text-lg  md:text-2xl font-medium  px-6 md:px-8  py-3 rounded-[26px] h-17 md:my-3 ${poppins.variable}`}
         >
           Add New Adminstartors
         </button>
