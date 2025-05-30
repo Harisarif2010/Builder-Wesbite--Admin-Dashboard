@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { roboto } from "@/app/fonts";
+import { poppins, roboto } from "@/app/fonts";
 import { ChevronDown } from "lucide-react";
 
 const AddDiscount = () => {
@@ -83,7 +83,9 @@ const AddDiscount = () => {
           </div>
 
           <div className=" w-full flex justify-center md:justify-end my-3 md:mt-16 ">
-            <button className=" bg-[var(--primary-blue)] text-white text-lg md:text-2xl font-medium px-8 py-3 rounded-[26px] h-14">
+            <button
+              className={` bg-[var(--primary-blue)] text-white text-lg md:text-2xl font-medium px-8 py-3 rounded-[26px] h-14 ${poppins.variable}`}
+            >
               Add
             </button>
           </div>

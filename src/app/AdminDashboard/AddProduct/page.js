@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { roboto } from "@/app/fonts";
+import { poppins, roboto } from "@/app/fonts";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 

@@ -102,7 +102,9 @@ const Payments = () => {
           </div>
         </div>
       </div>
-      <div className=" w-full flex  md:justify-end my-3  justify-center ">
+      <div
+        className={` w-full flex  md:justify-end my-3  justify-center  ${poppins.variable}`}
+      >
         {" "}
         <div className="flex  gap-x-3">
           <div className="relative inline-block text-left">

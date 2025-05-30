@@ -142,7 +142,9 @@ const Report = () => {
           </table>
         </div>
       </div>
-      <div className=" w-full flex  md:justify-end my-3  justify-center ">
+      <div
+        className={` w-full flex  md:justify-end my-3  justify-center  ${poppins.variable}`}
+      >
         <div className="relative inline-block text-left">
           {/* Dropdown Button */}
           <button

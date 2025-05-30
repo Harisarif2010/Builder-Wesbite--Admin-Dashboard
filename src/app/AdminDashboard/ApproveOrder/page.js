@@ -1,4 +1,4 @@
-import { roboto } from "@/app/fonts";
+import { poppins, roboto } from "@/app/fonts";
 import React from "react";
 
 const ApproveOrder = () => {

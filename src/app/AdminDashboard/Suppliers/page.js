@@ -1,7 +1,7 @@
 import { Pencil, Trash2 } from "lucide-react";
 import React from "react";
 import { orders } from "@/app/data";
-import { roboto } from "@/app/fonts";
+import { poppins, roboto } from "@/app/fonts";
 import Image from "next/image";
 
 const Suppliers = () => {
@@ -12,7 +12,7 @@ const Suppliers = () => {
         <h3 className="text-[#3B4758] text-2xl font-bold px-3 py-1">
           Suppliers Managment
         </h3>
-        <div className="bg-white p-6 rounded-[22px] shadow-lg my-3">
+        <div className="bg-white p-6 rounded-[22px]  my-3">
           <h2 className="text-[17px] font-bold mb-4">Suppliers List</h2>
 
           <div className="overflow-x-auto">

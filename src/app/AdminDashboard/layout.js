@@ -9,7 +9,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <div className="flex  bg-[#EEF0F4] dark:bg-black  t">
+        <div className="flex  bg-[#EEF0F4] dark:bg-black   ">
           {/* Sidebar */}
           <AdminSidebar />
 

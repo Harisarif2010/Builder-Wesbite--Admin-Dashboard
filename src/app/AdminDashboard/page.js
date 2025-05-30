@@ -8,7 +8,7 @@ const Dashboard = () => {
   return (
     <div>
       <div className="flex flex-wrap justify-between px-2 py-1">
-        <h3 className="text-[#3B4758] text-2xl font-bold py-1">Dashboard</h3>
+        <h3 className="text-[#3B4758] text-2xl font-bold py-1">Overview</h3>
         <div className="flex flex-wrap gap-x-3 gap-y-2 sm:gap-y-0">
           <button
             onClick={() => {

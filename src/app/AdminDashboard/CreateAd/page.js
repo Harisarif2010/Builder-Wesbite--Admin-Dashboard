@@ -125,7 +125,9 @@ const CreateAd = () => {
               <button className=" text-[var(--primary-blue)] bg-white text-lg md:text-2xl border border-[#A0A0A0] font-medium px-8 py-3 rounded-[26px] h-14">
                 Edit
               </button>
-              <button className=" bg-[var(--primary-blue)] text-white text-lg md:text-2xl font-medium px-8 py-3 rounded-[26px] h-14">
+              <button
+                className={` bg-[var(--primary-blue)] text-white text-lg md:text-2xl font-medium px-8 py-3 rounded-[26px] h-14 ${poppins.variable}`}
+              >
                 Save
               </button>
 

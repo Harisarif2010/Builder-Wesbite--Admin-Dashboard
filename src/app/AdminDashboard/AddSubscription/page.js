@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { poppins } from "@/app/fonts";
 
 const Subscription = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -106,7 +107,9 @@ const Subscription = () => {
         </div>
         <div className=" w-full flex  justify-end my-4">
           {/* Back Button */}
-          <button className=" bg-[var(--primary-blue)] text-white text-xl font-medium  px-6 py-3 rounded-[26px] h-14">
+          <button
+            className={` bg-[var(--primary-blue)] text-white text-xl font-medium  px-6 py-3 rounded-[26px] h-14 ${poppins.variable}`}
+          >
             Save
           </button>
         </div>

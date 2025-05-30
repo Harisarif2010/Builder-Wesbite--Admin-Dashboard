@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 import { orders } from "@/app/data";
 import { Pencil, Trash2 } from "lucide-react";
-import { roboto } from "@/app/fonts";
+import { poppins, roboto } from "@/app/fonts";
 import { useRouter } from "next//navigation";
 import { DeleteModal } from "../../../../Components/Modals/DeleteModal";
 import Image from "next/image";

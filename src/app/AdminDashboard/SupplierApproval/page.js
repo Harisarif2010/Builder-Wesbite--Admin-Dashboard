@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-import { roboto } from "@/app/fonts";
+import { poppins, roboto } from "@/app/fonts";
 import Image from "next/image";
 
 const SupplierApproval = () => {

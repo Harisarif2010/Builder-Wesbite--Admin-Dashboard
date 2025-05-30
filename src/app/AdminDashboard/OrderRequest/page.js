@@ -1,6 +1,6 @@
 import React from "react";
 import { Pen } from "lucide-react";
-import { roboto } from "@/app/fonts";
+import { poppins, roboto } from "@/app/fonts";
 
 const OrdersRequest = () => {
   return (

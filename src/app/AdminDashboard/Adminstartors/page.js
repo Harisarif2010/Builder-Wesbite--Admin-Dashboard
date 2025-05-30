@@ -1,6 +1,6 @@
 "use client";
 import { employeePermissions } from "@/app/data";
-import { roboto } from "@/app/fonts";
+import { poppins, roboto } from "@/app/fonts";
 import { Pencil, Trash2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React from "react";
@@ -14,7 +14,7 @@ const Permissions = () => {
       </h3>
       <div className="px-3">
         {" "}
-        <div className="bg-white p-4 rounded-[22px] shadow-lg my-3">
+        <div className="bg-white p-4 rounded-[22px] my-3">
           <h2 className="text-[17px] font-bold mb-4 px-3">Users List</h2>
 
           <div className="overflow-x-auto">

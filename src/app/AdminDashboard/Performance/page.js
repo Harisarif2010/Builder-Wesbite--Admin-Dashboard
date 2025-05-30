@@ -1,6 +1,6 @@
 import React from "react";
 import { orders } from "@/app/data";
-import { roboto } from "@/app/fonts";
+import { poppins, roboto } from "@/app/fonts";
 
 const Performance = () => {
   return (

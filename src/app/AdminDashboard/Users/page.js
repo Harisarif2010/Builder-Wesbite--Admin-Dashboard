@@ -1,7 +1,7 @@
 import { Pencil, Trash2 } from "lucide-react";
 import React from "react";
 import { orders } from "@/app/data";
-import { roboto } from "@/app/fonts";
+import { poppins, roboto } from "@/app/fonts";
 import Image from "next/image";
 
 const Users = () => {

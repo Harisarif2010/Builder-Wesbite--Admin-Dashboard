@@ -7,7 +7,9 @@ import { usePathname } from "next/navigation";
 const AdminSidebar = () => {
   const pathname = usePathname();
 
-  const isActive = (path) => pathname === path;
+  // const isActive = (path) => pathname === path;
+  const isActive = (paths) =>
+    Array.isArray(paths) ? paths.includes(pathname) : pathname === paths;
 
   return (
     //w-64 original
@@ -34,7 +36,20 @@ const AdminSidebar = () => {
                 <Link href="/AdminDashboard/">
                   <div
                     className={`flex items-center  px-4  py-2 mb-1 rounded-lg cursor-pointer transition-colors font-bold my-3  ${
-                      isActive("/AdminDashboard")
+                      isActive([
+                        "/AdminDashboard/",
+                        "/AdminDashboard/HomePageManagement",
+                        "/AdminDashboard/HomePageStatistics",
+                        "/AdminDashboard/HeroSection",
+                        "/AdminDashboard/SearchBar",
+                        "/AdminDashboard/RFQ",
+                        "/AdminDashboard/TopCategory",
+                        "/AdminDashboard/TopProducts",
+                        "/AdminDashboard/TopBrands",
+                        "/AdminDashboard/Works",
+                        "/AdminDashboard/Buisness",
+                        "/AdminDashboard/Reviews",
+                      ])
                         ? "bg-white text-[var(--secondary-blue)] "
                         : "text-white mx-3"
                     }`}
@@ -42,7 +57,20 @@ const AdminSidebar = () => {
                     <div className="mr-3 w-5 h-5 relative">
                       <Image
                         src={
-                          isActive("/AdminDashboard")
+                          isActive([
+                            "/AdminDashboard/",
+                            "/AdminDashboard/HomePageManagement",
+                            "/AdminDashboard/HomePageStatistics",
+                            "/AdminDashboard/HeroSection",
+                            "/AdminDashboard/SearchBar",
+                            "/AdminDashboard/RFQ",
+                            "/AdminDashboard/TopCategory",
+                            "/AdminDashboard/TopProducts",
+                            "/AdminDashboard/TopBrands",
+                            "/AdminDashboard/Works",
+                            "/AdminDashboard/Buisness",
+                            "/AdminDashboard/Reviews",
+                          ])
                             ? "/icons/dashboardblue.svg"
                             : "/icons/dashboard.png"
                         }
@@ -57,10 +85,10 @@ const AdminSidebar = () => {
                 </Link>
               </li>
               <li className="mb-6 mx-6">
-                <Link href="/AdminDashboard/Profile">
+                <Link href="/AdminDashboard/Suppliers">
                   <div
                     className={`flex items-center px-4 py-2 mb-1 rounded-lg cursor-pointer transition-colors font-bold ${
-                      isActive("/AdminDashboard/Profile")
+                      isActive("/AdminDashboard/Suppliers")
                         ? "bg-white text-[var(--secondary-blue)] mx-3"
                         : "text-white  mx-3"
                     }`}
@@ -68,27 +96,51 @@ const AdminSidebar = () => {
                     <div className="mr-3 w-5 h-5 relative">
                       <Image
                         src={
-                          isActive("/AdminDashboard/Profile")
+                          isActive("/AdminDashboard/Suppliers")
                             ? "/icons/profileblue.svg"
                             : "/icons/managment.png"
                         }
                         alt="Pet Profile icon"
-                        width={20}
-                        height={20}
+                        width={16}
+                        height={16}
                         className="object-contain"
                       />
                     </div>
-                    <span className="text-[14px]">
-                      User & Supplier Managment
-                    </span>
+                    <span className="text-[14px]">Suppliers Managment</span>
                   </div>
                 </Link>
               </li>
               <li className="mb-6 mx-6">
-                <Link href="/AdminDashboard/Orders">
+                <Link href="/AdminDashboard/Users">
                   <div
                     className={`flex items-center px-4 py-2 mb-1 rounded-lg cursor-pointer transition-colors font-bold ${
-                      isActive("/AdminDashboard/Orders")
+                      isActive("/AdminDashboard/Users")
+                        ? "bg-white text-[var(--secondary-blue)] mx-3"
+                        : "text-white  mx-3"
+                    }`}
+                  >
+                    <div className="mr-3 w-5 h-5 relative">
+                      <Image
+                        src={
+                          isActive("/AdminDashboard/Users")
+                            ? "/icons/profileblue.svg"
+                            : "/icons/managment.png"
+                        }
+                        alt="Pet Profile icon"
+                        width={16}
+                        height={16}
+                        className="object-contain"
+                      />
+                    </div>
+                    <span className="text-[14px]">User Managment</span>
+                  </div>
+                </Link>
+              </li>
+              <li className="mb-6 mx-6">
+                <Link href="/AdminDashboard/Report">
+                  <div
+                    className={`flex items-center px-4 py-2 mb-1 rounded-lg cursor-pointer transition-colors font-bold ${
+                      isActive("/AdminDashboard/Report")
                         ? "bg-white text-[var(--secondary-blue)] mx-3"
                         : "text-white mx-3"
                     }`}
@@ -96,7 +148,7 @@ const AdminSidebar = () => {
                     <div className="mr-3 w-5 h-5 relative">
                       <Image
                         src={
-                          isActive("/AdminDashboard/Orders")
+                          isActive("/AdminDashboard/Report")
                             ? "/icons/orderblue.svg"
                             : "/icons/orders.svg"
                         }
@@ -136,32 +188,7 @@ const AdminSidebar = () => {
                   </div>
                 </Link>
               </li>
-              <li className="mb-6 mx-6">
-                <Link href="/AdminDashboard/Quotation">
-                  <div
-                    className={`flex items-center px-4 py-1 mb-1 rounded-lg   cursor-pointer transition-colors font-bold ${
-                      isActive("/AdminDashboard/PainScore")
-                        ? "bg-white text-[var(--secondary-blue)] mx-3"
-                        : "text-white  mx-3"
-                    }`}
-                  >
-                    <div className="mr-3 w-5 h-5 relative">
-                      <Image
-                        src={
-                          isActive("/AdminDashboard/Quotation")
-                            ? "/icons/productwhite.png"
-                            : "/icons/managment.png"
-                        }
-                        alt="Pet Profile icon"
-                        width={12}
-                        height={12}
-                        className="object-contain"
-                      />
-                    </div>
-                    <span className="text-[14px]">Products Managment</span>
-                  </div>
-                </Link>
-              </li>
+
               <li className="mb-6 mx-6">
                 <Link href="/AdminDashboard/ProductManagment">
                   <div
@@ -189,10 +216,13 @@ const AdminSidebar = () => {
                 </Link>
               </li>
               <li className="mb-6 mx-6">
-                <Link href="/AdminDashboard/Payment">
+                <Link href="/AdminDashboard/Payments">
                   <div
                     className={`flex items-center px-4 py-2 mb-1 rounded-lg cursor-pointer transition-colors font-bold ${
-                      isActive("/AdminDashboard/Payment")
+                      isActive([
+                        "/AdminDashboard/Payments",
+                        "/AdminDashboard/Financials",
+                      ])
                         ? "bg-white text-[var(--secondary-blue)] mx-3"
                         : "text-white mx-3"
                     }`}
@@ -200,7 +230,10 @@ const AdminSidebar = () => {
                     <div className="mr-3 w-5 h-5 relative">
                       <Image
                         src={
-                          isActive("/AdminDashboard/Payment")
+                          isActive([
+                            "/AdminDashboard/Payments",
+                            "/AdminDashboard/Financials",
+                          ])
                             ? "/icons/paymentblue.svg"
                             : "/icons/payment.svg"
                         }
@@ -215,6 +248,38 @@ const AdminSidebar = () => {
                 </Link>
               </li>
 
+              <li className="mb-6 mx-6">
+                <Link href="/AdminDashboard/SubscriptionManagment">
+                  <div
+                    className={`flex items-center px-4 py-2 mb-1 rounded-lg cursor-pointer transition-colors font-bold ${
+                      isActive([
+                        "/AdminDashboard/SubscriptionManagment",
+                        "/AdminDashboard/AddSubscription",
+                      ])
+                        ? "bg-white text-[var(--secondary-blue)] mx-3"
+                        : "text-white  mx-3"
+                    }`}
+                  >
+                    <div className="mr-3 w-5 h-5 relative">
+                      <Image
+                        src={
+                          isActive([
+                            "/AdminDashboard/SubscriptionManagment",
+                            "/AdminDashboard/AddSubscription",
+                          ])
+                            ? "/icons/inquiryblue.png"
+                            : "/icons/subscribe.png"
+                        }
+                        alt="Pet Profile icon"
+                        width={20}
+                        height={20}
+                        className="object-contain"
+                      />
+                    </div>
+                    <span className="text-[14px]">Subscription Management</span>
+                  </div>
+                </Link>
+              </li>
               <li className="mb-6 mx-6">
                 <Link href="/AdminDashboard/Quotation">
                   <div
@@ -246,7 +311,10 @@ const AdminSidebar = () => {
                 <Link href="/AdminDashboard/AdManagment">
                   <div
                     className={`flex items-center px-4 py-2 mb-1 rounded-lg cursor-pointer transition-colors font-bold ${
-                      isActive("/AdminDashboard/CreateAd")
+                      isActive([
+                        "/AdminDashboard/AdManagment",
+                        "/AdminDashboard/CreateAd",
+                      ])
                         ? "bg-white text-[var(--secondary-blue)] mx-3"
                         : "text-white mx-3"
                     }`}
@@ -254,7 +322,10 @@ const AdminSidebar = () => {
                     <div className="mr-3 w-5 h-5 relative">
                       <Image
                         src={
-                          isActive("/AdminDashboard/AdManagment")
+                          isActive([
+                            "/AdminDashboard/AdManagment",
+                            "/AdminDashboard/CreateAd",
+                          ])
                             ? "/icons/adblue.png"
                             : "/icons/Ad.png"
                         }
@@ -271,7 +342,10 @@ const AdminSidebar = () => {
                 <Link href="/AdminDashboard/DiscountCode">
                   <div
                     className={`flex items-center px-4 py-2 mb-1 rounded-lg cursor-pointer transition-colors font-bold ${
-                      isActive("/AdminDashboard/DiscountCode")
+                      isActive([
+                        "/AdminDashboard/DiscountCode",
+                        "/AdminDashboard/AddDiscount",
+                      ])
                         ? "bg-white text-[var(--secondary-blue)] mx-3"
                         : "text-white mx-3"
                     }`}
@@ -279,7 +353,10 @@ const AdminSidebar = () => {
                     <div className="mr-3 w-5 h-5 relative">
                       <Image
                         src={
-                          isActive("/AdminDashboard/DiscountCode")
+                          isActive([
+                            "/AdminDashboard/Payments",
+                            "/AdminDashboard/Financials",
+                          ])
                             ? "/icons/offerwhite.png"
                             : "/icons/offer.png"
                         }
@@ -305,7 +382,10 @@ const AdminSidebar = () => {
                     <div className="mr-3 w-5 h-5 relative">
                       <Image
                         src={
-                          isActive("/AdminDashboard/Brands")
+                          isActive([
+                            "/AdminDashboard/Brands",
+                            "/AdminDashboard/AddBrand",
+                          ])
                             ? "/icons/brandblue.png"
                             : "/icons/brand.png"
                         }
@@ -322,7 +402,10 @@ const AdminSidebar = () => {
                 <Link href="/AdminDashboard/Adminstartors">
                   <div
                     className={`flex items-center px-4 py-2 mb-1 rounded-lg cursor-pointer transition-colors font-bold ${
-                      isActive("/AdminDashboard/Help")
+                      isActive([
+                        "/AdminDashboard/Adminstartors",
+                        "/AdminDashboard/AddAdminstartor",
+                      ])
                         ? "bg-white text-[var(--secondary-blue)] mx-3"
                         : "text-white mx-3"
                     }`}
@@ -330,7 +413,10 @@ const AdminSidebar = () => {
                     <div className="mr-3 w-5 h-5 relative">
                       <Image
                         src={
-                          isActive("/AdminDashboard/Brands")
+                          isActive([
+                            "/AdminDashboard/Adminstartors",
+                            "/AdminDashboard/AddAdminstartor",
+                          ])
                             ? "/icons/permissionblue.png"
                             : "/icons/permission.png"
                         }
@@ -347,7 +433,7 @@ const AdminSidebar = () => {
                 <Link href="/AdminDashboard/Performance ">
                   <div
                     className={`flex items-center px-4 py-2 mb-1 rounded-lg cursor-pointer transition-colors font-bold ${
-                      isActive("/AdminDashboard/Chat")
+                      isActive("/AdminDashboard/Performance")
                         ? "bg-white text-[var(--secondary-blue)] mx-3"
                         : "text-white mx-3"
                     }`}

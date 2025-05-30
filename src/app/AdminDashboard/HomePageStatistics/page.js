@@ -1,4 +1,4 @@
-import { roboto } from "@/app/fonts";
+import { poppins, roboto } from "@/app/fonts";
 import { Pencil } from "lucide-react";
 import Image from "next/image";
 import React from "react";

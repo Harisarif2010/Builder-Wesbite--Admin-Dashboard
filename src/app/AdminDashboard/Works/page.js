@@ -1,5 +1,5 @@
 import React from "react";
-import { roboto } from "@/app/fonts";
+import { poppins, roboto } from "@/app/fonts";
 import Image from "next/image";
 import { Pen } from "lucide-react";
 
@@ -64,7 +64,9 @@ const Works = () => {
             </div>
           </div>
           <div className=" w-full flex justify-center my-3 md:justify-end md:items-end md:mt-12">
-            <button className=" bg-[var(--primary-blue)] text-white text-lg md:text-2xl font-medium px-8 py-3 rounded-[26px] h-14">
+            <button
+              className={` bg-[var(--primary-blue)] text-white text-lg md:text-2xl font-medium px-8 py-3 rounded-[26px] h-14 ${poppins.variable}`}
+            >
               Save
             </button>
           </div>

@@ -1,6 +1,6 @@
 "use client";
 import { brands } from "@/app/data";
-import { roboto } from "@/app/fonts";
+import { poppins, roboto } from "@/app/fonts";
 import { Pencil, Trash2 } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -13,7 +13,7 @@ const Brands = () => {
       <h3 className="text-[#3B4758] text-2xl font-bold px-3 py-1">Brands</h3>
       <div className="px-3">
         {" "}
-        <div className="bg-white p-4 rounded-[22px] shadow-lg my-3">
+        <div className="bg-white p-4 rounded-[22px]  my-3">
           <h2 className="text-[17px] font-bold mb-4 px-3">Brands List</h2>
 
           <div className="overflow-x-auto">

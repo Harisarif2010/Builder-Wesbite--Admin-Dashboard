@@ -92,7 +92,9 @@ const ContentManagment = () => {
           </div>
           <div className=" w-full flex justify-center my-3 md:justify-end md:items-end md:mt-8">
             <div className=" w-full flex justify-center md:justify-end my-3 ">
-              <button className=" bg-[var(--primary-blue)] text-white text-lg md:text-2xl font-medium px-8 py-3 rounded-[26px] h-14">
+              <button
+                className={` bg-[var(--primary-blue)] text-white text-lg md:text-2xl font-medium px-8 py-3 rounded-[26px] h-14 ${poppins.variable}`}
+              >
                 Publish
               </button>
             </div>

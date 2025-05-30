@@ -1,6 +1,6 @@
 "use client";
 import { sections } from "@/app/data";
-import { roboto } from "@/app/fonts";
+import { poppins, roboto } from "@/app/fonts";
 import { Pencil } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React from "react";

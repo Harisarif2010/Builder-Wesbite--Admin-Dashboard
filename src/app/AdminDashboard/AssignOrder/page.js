@@ -1,4 +1,5 @@
 "use client";
+import { poppins } from "@/app/fonts";
 import { ChevronDown } from "lucide-react";
 import React, { useState } from "react";
 
@@ -117,7 +118,9 @@ const AssignOrder = () => {
               />
             </div>
           </div>
-          <div className=" w-full flex  md:justify-end my-3  justify-center ">
+          <div
+            className={` w-full flex  md:justify-end my-3  justify-center  ${poppins.variable}`}
+          >
             {" "}
             <button className="bg-[var(--primary-blue)] text-[white] text-[20px]  flex justify-center items-center  px-10 py-5   font-medium rounded-[22px] h-14">
               Assign

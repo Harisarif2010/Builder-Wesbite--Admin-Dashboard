@@ -1,7 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import { DeleteAccountModal } from "../../../../Components/Modals/DeleteAccountModal";
-
+import { poppins } from "@/app/fonts";
+poppins;
 const DeleteUser = () => {
   const [isOpen, setIsOpen] = useState(false);
   const openModal = () => {
@@ -76,7 +77,9 @@ const DeleteUser = () => {
               </ol>
             </div>
           </div>
-          <div className=" w-full flex  md:justify-end my-3  justify-center ">
+          <div
+            className={` w-full flex  md:justify-end my-3  justify-center  ${poppins.variable}`}
+          >
             {" "}
             <div className="flex  gap-x-3">
               <button className="bg-[var(--primary-border)] text-[white] text-lg  flex justify-center items-center  px-10 py-5   font-medium rounded-[22px] h-14">
